@@ -9,7 +9,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.3",
+        "php": "^8.4",
         "artesaos/seotools": "^1.4",
         "google-gemini-php/laravel": "^2.0",
         "intervention/image": "^4.0",
@@ -103,6 +103,9 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
+        },
+        "platform": {
+            "php": "8.4"
         }
     },
     "minimum-stability": "stable",
