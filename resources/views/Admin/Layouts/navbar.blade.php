@@ -46,7 +46,7 @@
              @include('Admin.Layouts.Parts.notification')
              <!--/ Notification -->
 
-             
+
              <!-- User -->
              <li class="nav-item navbar-dropdown dropdown-user dropdown">
                  <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);"
@@ -70,7 +70,8 @@
                                  <div class="grow">
                                      <h6 class="mb-0">
                                          {{ auth()->user()->first_name . ' ' . auth()->user()->last_name }}</h6>
-                                     <small class="text-body-secondary">Admin</small>
+                                     <small
+                                         class="text-body-secondary">{{ ucfirst(auth()->user()->getRoleNames()->first()) }}</small>
                                  </div>
                              </div>
                          </a>
@@ -78,12 +79,12 @@
                      <li>
                          <div class="dropdown-divider my-1"></div>
                      </li>
-                     <li>
+                     {{-- <li>
                          <a class="dropdown-item" href="#">
                              <i class="icon-base bx bx-user icon-md me-3"></i>
                              <span>My Profile</span>
                          </a>
-                     </li>
+                     </li> --}}
                      <li>
                          <a class="dropdown-item" href="{{ route('profile', auth()->user()->username) }}">
                              <i class="icon-base bx bx-cog icon-md me-3"></i><span>Settings</span>
