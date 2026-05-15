@@ -1,5 +1,2 @@
 [phases.setup]
-nixPkgs = ["php84", "php84Extensions.mbstring", "php84Extensions.xml", "php84Extensions.bcmath", "php84Extensions.curl", "php84Extensions.zip", "php84Extensions.gd", "php84Extensions.intl", "php84Extensions.pdo", "php84Extensions.pdo_mysql", "php84Extensions.tokenizer", "php84Extensions.ctype", "php84Extensions.fileinfo", "php84Extensions.openssl", "composer"]
-
-[variables]
-NIXPACKS_PHP_VERSION = "8.4"
+packages = ["php84", "php84Extensions.mbstring", "php84Extensions.xml", "php84Extensions.bcmath", "php84Extensions.curl", "php84Extensions.zip", "php84Extensions.gd", "php84Extensions.intl", "php84Extensions.pdo", "php84Extensions.pdo_mysql", "php84Extensions.tokenizer", "php84Extensions.ctype", "php84Extensions.fileinfo", "php84Extensions.openssl", "nodejs_22", "composer"]
