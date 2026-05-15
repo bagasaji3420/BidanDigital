@@ -1,0 +1,44 @@
+.opt-btn {
+    background: #fff;
+    border: 1.5px solid #dee2e6;
+    border-radius: 10px;
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: #333;
+}
+
+.opt-btn:hover {
+    border-color: #696cff;
+    background: #f0f0ff;
+}
+
+.opt-btn.selected {
+    border-color: #696cff;
+    background: #ebebff;
+    color: #696cff;
+    font-weight: 600;
+}
+
+.risiko-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.82rem;
+}
+
+.risiko-item:last-child {
+    border-bottom: none;
+}
+
+.risiko-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 4px;
+    flex-shrink: 0;
+}

@@ -1,0 +1,18 @@
+.anak-card {
+    border: 1.5px solid #e9e9e9;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 8px;
+}
+
+.anak-card:hover {
+    border-color: #696cff;
+    background: #f8f8ff;
+}
+
+.anak-card.active {
+    border-color: #696cff;
+    background: #f0f0ff;
+}

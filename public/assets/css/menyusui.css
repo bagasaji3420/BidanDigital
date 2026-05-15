@@ -1,0 +1,43 @@
+.payudara-active {
+    background: var(--bs-primary) !important;
+    color: #fff !important;
+    border-color: var(--bs-primary) !important;
+}
+
+.sesi-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.82rem;
+}
+
+.sesi-row:last-child {
+    border-bottom: none;
+}
+
+@keyframes scalePulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.96);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scale-pulse {
+    animation: scalePulse 0.2s ease;
+}
+
+.anak-btn-active {
+    background: var(--bs-primary) !important;
+    color: #fff !important;
+    border-color: var(--bs-primary) !important;
+}

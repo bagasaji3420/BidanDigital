@@ -1,0 +1,60 @@
+.kick-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #e9ecef;
+    border: 2px solid #dee2e6;
+    transition: all 0.2s ease;
+}
+
+.kick-dot.active {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+    transform: scale(1.15);
+}
+
+.kick-dot.done {
+    background: #3aab8c;
+    border-color: #3aab8c;
+}
+
+.histori-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.82rem;
+}
+
+.histori-row:last-child {
+    border-bottom: none;
+}
+
+.histori-row span:nth-child(2) {
+    text-align: center;
+}
+
+.histori-row span:nth-child(3) {
+    text-align: right;
+    min-width: 50px;
+}
+
+@keyframes scalePulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scale-pulse {
+    animation: scalePulse 0.2s ease;
+}

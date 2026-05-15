@@ -1,0 +1,475 @@
+:root {
+    --rose: #e8607a;
+    --green: #3aab8c;
+    --rose-lt: #fdf0f2;
+    --rose-md: #f5c0cb;
+    --teal: #3aab8c;
+    --teal-lt: #e6f7f2;
+    --amber: #e8a045;
+    --amber-lt: #fef6ea;
+    --gray-50: #f8f7f5;
+    --gray-100: #eeece8;
+    --gray-300: #c4c1b8;
+    --gray-500: #888580;
+    --gray-700: #4a4845;
+    --gray-900: #1e1c1a;
+    --blue: #4a90c4;
+    --blue-lt: #daeeff;
+    --blue-md: #a0c8e8;
+    --radius: 16px;
+    --shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+.pdf-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.hpl-page {
+    padding: 0;
+}
+
+.hpl-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* MODE TOGGLE */
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: var(--gray-100);
+    border-radius: 100px;
+    padding: 4px;
+    width: fit-content;
+    margin: 0 auto 2rem;
+}
+
+.mode-btn {
+    padding: 7px 20px;
+    border-radius: 100px;
+    border: none;
+    background: transparent;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mode-btn.active {
+    background: white;
+    color: var(--gray-900);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* INPUT BAR */
+.input-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.inp-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.inp-group label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.inp-group input {
+    height: 42px;
+    padding: 0 14px;
+    border: 1.5px solid var(--gray-100);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--gray-900);
+    background: white;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.inp-group input:focus {
+    border-color: var(--rose);
+}
+
+.btn-hitung {
+    align-self: flex-end;
+    height: 42px;
+    padding: 0 24px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        opacity 0.2s,
+        transform 0.15s;
+}
+
+.btn-hapus {
+    align-self: flex-end;
+    height: 42px;
+    padding: 0 24px;
+    background: var(--rose);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        opacity 0.2s,
+        transform 0.15s;
+}
+
+.btn-book {
+    align-self: flex-end;
+    height: 42px;
+    padding: 0 24px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        opacity 0.2s,
+        transform 0.15s;
+}
+
+.btn-hitung:hover .btn-hapus:hover .btn-book:hover {
+    opacity: 0.88;
+}
+
+.btn-hitung:active .btn-hapus:hover .btn-book:hover {
+    transform: scale(0.97);
+}
+
+/* MAIN LAYOUT */
+.hpl-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (min-width: 860px) {
+    .hpl-main {
+        grid-template-columns: auto 1fr;
+        align-items: start;
+    }
+}
+
+/* WHEEL */
+.wheel-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+canvas#roda {
+    display: block;
+    max-width: 100%;
+}
+
+/* PANEL */
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.panel-empty {
+    background: white;
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    text-align: center;
+    color: var(--gray-300);
+    font-size: 0.9rem;
+    border: 1.5px dashed var(--gray-100);
+}
+
+.panel-empty span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+    box-shadow: var(--shadow);
+}
+
+.card-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+}
+
+/* HERO STATS */
+.hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stat-item {
+}
+
+.ringkasan-wrap {
+    position: relative;
+    padding-right: 120px; /* kasih ruang buat image */
+}
+
+.janin-img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+}
+.stat-label {
+    font-size: 0.72rem;
+    color: var(--gray-500);
+    margin-bottom: 2px;
+}
+
+.stat-val {
+    font-size: 1.6rem;
+    color: var(--gray-900);
+    line-height: 1.1;
+}
+
+.stat-val.accent {
+    color: var(--rose);
+}
+
+.stat-sub {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+.hpl-date {
+    font-size: 1.3rem;
+    color: var(--rose);
+    line-height: 1.2;
+}
+
+/* DATA JANIN */
+.janin-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.janin-item {
+    background: var(--blue-lt);
+    border-radius: 10px;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.janin-num {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.janin-lbl {
+    font-size: 0.7rem;
+    color: var(--gray-500);
+    margin-top: 2px;
+}
+
+/* BB IBU */
+.bb-bar-wrap {
+    margin-top: 8px;
+}
+
+.bb-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: var(--gray-500);
+    margin-bottom: 5px;
+}
+
+.bb-bar-track {
+    height: 8px;
+    background: var(--gray-100);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bb-bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    transition: width 0.6s ease;
+}
+
+.bb-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.bb-status.kurang {
+    background: var(--amber-lt);
+    color: var(--amber);
+}
+
+.bb-status.normal {
+    background: var(--teal-lt);
+    color: var(--teal);
+}
+
+.bb-status.lebih {
+    background: var(--rose-lt);
+    color: var(--rose);
+}
+
+/* MILESTONE */
+.milestone-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ms-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.ms-row:last-child {
+    border-bottom: none;
+}
+
+.ms-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.ms-dot.past {
+    background: var(--gray-300);
+}
+
+.ms-dot.now {
+    background: var(--rose);
+    box-shadow: 0 0 0 3px var(--rose-md);
+}
+
+.ms-dot.future {
+    background: var(--blue-md);
+}
+
+.ms-week {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gray-500);
+    min-width: 48px;
+}
+
+.ms-text {
+    font-size: 0.82rem;
+    color: var(--gray-700);
+    flex: 1;
+}
+
+.ms-date {
+    font-size: 0.72rem;
+    color: var(--gray-500);
+    text-align: right;
+}
+
+/* TRIMESTER BADGE */
+.tri-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.tri-1 {
+    background: var(--blue-lt);
+    color: var(--blue);
+}
+
+.tri-2 {
+    background: var(--teal-lt);
+    color: var(--teal);
+}
+
+.tri-3 {
+    background: var(--rose-lt);
+    color: var(--rose);
+}
+
+.janin-sprite {
+    width: 120px; /* ukuran 1 cell (atur sesuai kebutuhan) */
+    height: 120px;
+    background-image: url("/assets/img/front-pages/landing-page/janin.png");
+    background-repeat: no-repeat;
+    background-size: 800% 500%;
+    /* 8 kolom = 800%, 5 row = 500% */
+}
+
+canvas#roda {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+.wheel-wrap {
+    width: 100%;
+    overflow: hidden;
+}

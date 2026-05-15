@@ -1,0 +1,29 @@
+.status-normal {
+    background: #e6f7f2;
+    color: #0f6e56;
+}
+
+.status-kurang {
+    background: #fff8e1;
+    color: #b8860b;
+}
+
+.status-lebih {
+    background: #fdecea;
+    color: #c0392b;
+}
+
+.tri-badge-1 {
+    background: #daeeff;
+    color: #1a6fa0;
+}
+
+.tri-badge-2 {
+    background: #d0f2e8;
+    color: #0f6e56;
+}
+
+.tri-badge-3 {
+    background: #fde8ed;
+    color: #c0392b;
+}
