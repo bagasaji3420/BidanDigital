@@ -13,7 +13,7 @@ import {
     useSensors,
 } from "@dnd-kit/core";
 
-import ModeSelector from "./ModeSelector";
+import ModeSelector from "./Modeselector";
 import ManualBook from "./ManualBook";
 import GameTable from "./GameTable";
 import ResultScreen from "./ResultScreen";
