@@ -1,5 +1,6 @@
 {
     "php": {
-        "version": "8.4"
+        "version": "8.4",
+        "extensions": ["intl", "mbstring", "xml", "bcmath", "curl", "zip", "gd", "pdo", "pdo_mysql", "tokenizer", "ctype", "fileinfo", "openssl"]
     }
 }
