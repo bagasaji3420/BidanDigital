@@ -25,10 +25,14 @@ class Article extends Controller
 
         $categories = Category::all();
 
-        $articles = Articles::with(['categories', 'user'])
-            ->whereIn('id', $ids)
-            ->orderByRaw('FIELD(id, ' . implode(',', $ids) . ')')
-            ->get();
+        $articles = collect(); // default kosong
+
+        if (!empty($ids)) {
+            $articles = Articles::with(['categories', 'user'])
+                ->whereIn('id', $ids)
+                ->orderByRaw('FIELD(id, ' . implode(',', $ids) . ')')
+                ->get();
+        }
 
         $description = 'BundaMuda – Informasi terpercaya seputar kehamilan, persalinan, tumbuh kembang bayi, dan parenting untuk ibu Indonesia.';
 
@@ -54,7 +58,8 @@ class Article extends Controller
         ]);
     }
 
-    public function bookmark(){
+    public function bookmark()
+    {
         return view('Home.Article.bookmark', [
             'title'      => 'Bookmark Artikel',
         ]);
@@ -139,12 +144,12 @@ class Article extends Controller
         $image       = $article->thumbnail ? asset($article->thumbnail) : null;
         $keywords    = $article->categories->pluck('name')->toArray();
 
-        SEOMeta::setTitle($title . ' | ' . config('app.name') );
+        SEOMeta::setTitle($title . ' | ' . config('app.name'));
         SEOMeta::setDescription($description);
         SEOMeta::setCanonical(url()->current());
         SEOMeta::addKeyword($keywords);
 
-        OpenGraph::setTitle($title . ' | ' . config('app.name') );
+        OpenGraph::setTitle($title . ' | ' . config('app.name'));
         OpenGraph::setDescription($description);
         OpenGraph::setUrl(url()->current());
         OpenGraph::setType('article');
@@ -157,7 +162,7 @@ class Article extends Controller
             OpenGraph::addImage($image);
         }
 
-        TwitterCard::setTitle($title . ' | ' . config('app.name') );
+        TwitterCard::setTitle($title . ' | ' . config('app.name'));
         TwitterCard::setDescription($description);
         TwitterCard::setType('summary_large_image');
         if ($image) {
