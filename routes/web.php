@@ -9,7 +9,7 @@ use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\WilayahController;
 
 // Homapage 
-Route::redirect('/', '/app');
+Route::get('/', fn() => redirect()->route('app'));
 
 
 
