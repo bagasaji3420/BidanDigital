@@ -25,9 +25,9 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions): void {
 
-        $exceptions->render(function (\Spatie\Permission\Exceptions\UnauthorizedException $e, $request) {
-            Alert::error('Denied', 'Access Denied');
+        // $exceptions->render(function (\Spatie\Permission\Exceptions\UnauthorizedException $e, $request) {
+        //     Alert::error('Denied', 'Access Denied');
 
-            return redirect()->route('dashboard');
-        });
+        //     return redirect()->route('dashboard');
+        // });
     })->create();
