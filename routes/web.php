@@ -12,8 +12,6 @@ use App\Http\Controllers\WilayahController;
 Route::get('/', fn() => redirect()->route('app'));
 
 
-
-Route::get('/', [Artikel::class, 'home'])->name('index');
 Route::post('/chatbot/send', [ChatbotController::class, 'send'])->name('chatbot.send')->middleware('throttle:chatbot-daily');
 
 Route::get('/articles', [Artikel::class, 'index'])->name('article.index');
