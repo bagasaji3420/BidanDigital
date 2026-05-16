@@ -12,6 +12,7 @@ export default defineConfig({
             input: [
                 "resources/css/app.css",
                 "resources/js/app.js",
+                "resources/js/loading.js",
                 "resources/js/article/show.js",
                 "resources/js/article/bookmark.js",
                 "resources/js/data.js",
