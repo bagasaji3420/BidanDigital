@@ -23,6 +23,7 @@
         "mews/purifier": "^3.4",
         "opcodesio/log-viewer": "^3.24",
         "realrashid/sweet-alert": "*",
+        "spatie/crawler": "^9.3",
         "spatie/laravel-activitylog": "^5.0",
         "spatie/laravel-permission": "^7.2",
         "spatie/laravel-sitemap": "^8.1",
