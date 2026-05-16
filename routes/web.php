@@ -1,23 +1,24 @@
 <?php
 
+use App\Http\Controllers\Article\ArticleController;
 use App\Http\Controllers\ChatbotController;
-use App\Http\Controllers\Home\Article;
+use App\Http\Controllers\Home\Article as Artikel;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\WilayahController;
 
 // Homapage 
-Route::redirect('/', '/');
+Route::redirect('/', '/app');
 
 
 
-Route::get('/', [Article::class, 'home'])->name('index');
+Route::get('/', [Artikel::class, 'home'])->name('index');
 Route::post('/chatbot/send', [ChatbotController::class, 'send'])->name('chatbot.send')->middleware('throttle:chatbot-daily');
 
-Route::get('/articles', [Article::class, 'index'])->name('article.index');
-Route::get('/articles/bookmark', [Article::class, 'bookmark'])->name('article.bookmark');
-Route::get('/articles/{article:slug}', [Article::class, 'show'])->name('article.show');
+Route::get('/articles', [Artikel::class, 'index'])->name('article.index');
+Route::get('/articles/bookmark', [Artikel::class, 'bookmark'])->name('article.bookmark');
+Route::get('/articles/{article:slug}', [Artikel::class, 'show'])->name('article.show');
 
 Route::view('/login', 'Admin.login', [
     'title' => 'Login'
