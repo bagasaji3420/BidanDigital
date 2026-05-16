@@ -8,10 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\WilayahController;
 
-// Homapage 
-Route::get('/', fn() => redirect()->route('app'));
 
-
+Route::get('/', fn() => redirect()->route('app'))->name('index');
 Route::post('/chatbot/send', [ChatbotController::class, 'send'])->name('chatbot.send')->middleware('throttle:chatbot-daily');
 
 Route::get('/articles', [Artikel::class, 'index'])->name('article.index');
