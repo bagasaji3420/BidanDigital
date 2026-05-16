@@ -23,5 +23,9 @@ class AppServiceProvider extends ServiceProvider
         // Gate::define('viewLogViewer', function ($user) {
         //     return $user->hasRole('developer');
         // });
+
+        if (config('app.env') === 'production') {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
     }
 }
