@@ -28,7 +28,7 @@
             <a href="{{ route('notifications.index') }}"
                 class="btn d-flex flex-column align-items-center justify-content-center gap-1 border-0 bg-transparent p-0 position-relative"
                 style="width: 64px;">
-                <i class="bx bx-bell fs-4 text-muted"></i>
+                <i class="bx bx-log-in-circle fs-4 text-muted"></i>
                 {{-- Badge kalau ada notif belum dibaca --}}
                 @php $unread = auth()->user()->unreadNotifications->count(); @endphp
                 @if ($unread > 0)
@@ -36,7 +36,7 @@
                         {{ $unread > 9 ? '9+' : $unread }}
                     </span>
                 @endif
-                <span style="font-size: 0.65rem;" class="text-muted">Notifikasi</span>
+                <span style="font-size: 0.65rem;" class="text-muted">Login</span>
             </a>
         @else
             <a href="{{ route('login') }}"

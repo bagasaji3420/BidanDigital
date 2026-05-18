@@ -307,7 +307,7 @@ export default defineConfig({
     server: {
         host: "0.0.0.0",
         port: 5173,
-        hmr: { host: "10.215.52.43" },
+        hmr: { host: "10.48.221.43" },
         watch: { ignored: ["**/storage/framework/views/**"] },
     },
 });

@@ -48,7 +48,6 @@ class GoogleController extends Controller
                             $user->google_id  = $googleUser->getId();
                         }
                     } catch (\Exception $e) {
-
                     }
                 }
 
@@ -75,6 +74,10 @@ class GoogleController extends Controller
                 Auth::login($user, true);
             }
 
+            if ($user->hasRole('guest')) {
+                return redirect('/articles');
+            }
+
             return redirect()->intended(route('dashboard'));
         } catch (\Exception $e) {
             // dd($e->getMessage());
@@ -84,5 +87,4 @@ class GoogleController extends Controller
             return redirect('/login');
         }
     }
-
 }
