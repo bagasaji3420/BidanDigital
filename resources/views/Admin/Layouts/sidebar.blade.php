@@ -2,10 +2,10 @@
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="#" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <span class="text-primary">
-                    
+
                 </span>
             </span>
             <span class="app-brand-text demo menu-text fw-bold ms-2">{{ config('app.name') }}</span>
@@ -20,12 +20,14 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboards -->
-        <li class="menu-item">
-            <a href="{{ route('dashboard') }}" class="menu-link">
-                <i class="menu-icon icon-base bx bx-home-smile"></i>
-                <div data-i18n="Dashboards">Dashboards</div>
-            </a>
-        </li>
+        @hasrole(['developer', 'owner'])
+            <li class="menu-item">
+                <a href="{{ route('dashboard') }}" class="menu-link">
+                    <i class="menu-icon icon-base bx bx-home-smile"></i>
+                    <div data-i18n="Dashboards">Dashboards</div>
+                </a>
+            </li>
+        @endhasrole
 
         <li class="menu-item">
             <a href="{{ route('articles.index') }}" class="menu-link">
